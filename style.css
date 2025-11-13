@@ -1,0 +1,113 @@
+/* Reset mínimo y tipografía */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter, Arial, sans-serif;background:#f5f7fb;color:#222}
+.container{max-width:1000px;margin:30px auto;padding:0 20px}
+
+/* NAV (presente en todas las páginas) */
+.nav{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:#1f2937;color:#fff}
+.nav .logo{font-weight:700}
+.nav nav a{color:#fff;text-decoration:none;margin:0 8px;padding:6px 10px;border-radius:6px}
+.nav nav a:hover{background:rgba(255,255,255,0.08)}
+
+/* Cabeceras y textos */
+h1{font-size:2.4rem;margin-bottom:10px}
+.lead{margin-bottom:20px}
+
+/* BOTONERA (index) - cinco botones, cada uno con animación distinta */
+.botonera{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:20px 0}
+.btn{display:inline-block;padding:12px 18px;border-radius:8px;background:#0ea5a4;color:#fff;text-decoration:none;transition:all 0.3s;cursor:pointer}
+.btn:hover{transform:translateY(-4px)}
+
+/* Animaciones específicas para cada botón */
+.btn1{animation:pop 2s infinite}
+.btn2{animation:wave 3s infinite}
+.btn3{animation:spinY 4s infinite linear}
+.btn4{animation:glow 2.5s infinite}
+.btn5{animation:float 5s ease-in-out infinite}
+
+@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+@keyframes wave{0%{transform:translateX(0)}50%{transform:translateX(8px)}100%{transform:translateX(0)}}
+@keyframes spinY{0%{transform:rotateY(0deg)}100%{transform:rotateY(360deg)}}
+@keyframes glow{0%{box-shadow:0 0 0 rgba(14,165,164,0.0)}50%{box-shadow:0 0 20px rgba(14,165,164,0.4)}100%{box-shadow:0 0 0 rgba(14,165,164,0.0)}}
+@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+
+/* Resumen cards */
+.resumen{display:flex;gap:20px;justify-content:center;margin-top:20px}
+.resumen article{width:30%;background:#fff;padding:12px;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,0.08);transition:transform .3s}
+.resumen article:hover{transform:translateY(-6px)}
+
+/* Caja ciclo de colores */
+.caja.ciclo{width:120px;height:120px;border-radius:8px;margin:20px auto;animation:colores 4s infinite}
+@keyframes colores{0%{background:#ef4444}33%{background:#f59e0b}66%{background:#3b82f6}100%{background:#ef4444}}
+
+/* Texto rotativo */
+.rotante{display:inline-block;animation:giro 8s linear infinite}
+@keyframes giro{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+/* Velocidad variable (texto con distintas duraciones) */
+.vel{display:inline-block;margin:6px}
+.vel.slow{animation:rotVar 8s linear infinite}
+.vel.normal{animation:rotVar 4s linear infinite}
+.vel.fast{animation:rotVar 2s linear infinite}
+@keyframes rotVar{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+/* Galería */
+.galeria-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0}
+.item{position:relative;overflow:hidden;border-radius:8px;background:#fff}
+.item img{width:100%;height:180px;object-fit:cover;display:block;transition:transform .6s}
+.item .caption{position:absolute;left:0;right:0;bottom:0;padding:8px;background:rgba(0,0,0,0.6);color:#fff;opacity:0;transition:opacity .3s}
+.item:hover img{transform:scale(1.1)}
+.item:hover .caption{opacity:1}
+
+/* Animaciones distintas para cada item */
+.anim-a img{animation:zoomIn 6s infinite}
+.anim-b img{animation:rotateImg 10s infinite linear}
+.anim-c img{animation:skewImg 8s infinite ease-in-out}
+.anim-d img{animation:translateXImg 7s infinite ease-in-out}
+.anim-e img{animation:blurIn 6s infinite}
+.anim-f img{animation:flipY 8s infinite}
+.anim-g img{animation:scaleBounce 5s infinite}
+.anim-h img{animation:slowRotate 12s infinite linear}
+
+@keyframes zoomIn{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+@keyframes rotateImg{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+@keyframes skewImg{0%{transform:skewX(0deg)}50%{transform:skewX(6deg)}100%{transform:skewX(0deg)}}
+@keyframes translateXImg{0%{transform:translateX(0)}50%{transform:translateX(8px)}100%{transform:translateX(0)}}
+@keyframes blurIn{0%{filter:blur(0px)}50%{filter:blur(2px)}100%{filter:blur(0px)}}
+@keyframes flipY{0%{transform:rotateY(0deg)}50%{transform:rotateY(180deg)}100%{transform:rotateY(360deg)}}
+@keyframes scaleBounce{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
+@keyframes slowRotate{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+
+/* Tabla de carrera */
+.tabla-carrera{width:100%;border-collapse:collapse;margin:12px 0}
+.tabla-carrera th,.tabla-carrera td{padding:8px;border:1px solid #ddd;text-align:left}
+
+/* Iconos redes animados */
+.icon{display:inline-block;padding:10px;border-radius:50%;margin-right:8px;transition:transform .4s, background .3s}
+.icon:hover{transform:scale(1.15)}
+.redes-fb:hover{background:#3b5998;color:#fff}
+.redes-ig:hover{background:#e4405f;color:#fff}
+.redes-tw:hover{background:#1da1f2;color:#fff}
+
+/* Posts (blog) con efecto slide-up on scroll */
+.posts{display:flex;flex-direction:column;gap:20px}
+.post{background:#fff;padding:12px;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,0.06);opacity:0;transform:translateY(40px);transition:all .8s ease}
+.post img{width:100%;height:200px;object-fit:cover;border-radius:6px}
+.post.visible{opacity:1;transform:translateY(0)}
+
+/* Botón cambiante (al hacer click) */
+.btn-cambio{background:#ef4444}
+.btn-cambio.clicked{transform:scale(1.15);background:#10b981;transition:all .6s ease}
+
+/* Cambio de tamaño con hover para cuadros */
+.cuadro-hover{width:180px;height:120px;background:#fff;border-radius:8px;display:inline-block;transition:transform .3s}
+.cuadro-hover:hover{transform:scale(1.08)}
+
+/* Volver */
+.volver{margin-top:20px;display:inline-block}
+
+/* Footer */
+.pie{margin:40px 0;text-align:center;color:#666}
+
+/* Responsive */
+@media(max-width:800px){.galeria-grid{grid-template-columns:repeat(2,1fr)}.resumen{flex-direction:column}nav a{display:none}}
