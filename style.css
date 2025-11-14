@@ -111,3 +111,9 @@ h1{font-size:2.4rem;margin-bottom:10px}
 
 /* Responsive */
 @media(max-width:800px){.galeria-grid{grid-template-columns:repeat(2,1fr)}.resumen{flex-direction:column}nav a{display:none}}
+
+.rotante, 
+.texto-animado {
+    animation: none !important;
+    transform: none !important;
+}
